@@ -60,6 +60,7 @@ module Kanoko
 
         res = http_get(URI.parse("#{(request.secure? ? 'https' : 'http')}://#{src_path}"))
         if res.nil?
+          Kanoko::Processor.before_action unless kanoko::Processor.before_actiona.nil?
           return 404
         end
         after_response res
